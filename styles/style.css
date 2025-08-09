@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+}
+
+.white {
+  min-height: 100vh;
+  position: relative;
+}
+
+.white::before {
+  z-index: 2;
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60vh;
+  pointer-events: none;
+}
+
+.white::after {
+  z-index: 2;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18vh;
+  pointer-events: none;
+}
+
+.shapes-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shapes {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.34;
+  filter: blur(1.1px);
+  will-change: transform, opacity;
+  pointer-events: none;
+  transition: opacity 0.7s cubic-bezier(.9,.25,.52,1);
+  box-shadow: 0 2px 18px 0 rgba(120, 140, 180, 0.07);
+}
+
+.square {
+  border-radius: 0.5em;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-37.5vh) rotate(360deg);
+  }
+  100% {
+    transform: translateY(-75vh) rotate(360deg);
+    opacity: 0;
+  }
+}
