@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
   // Палитра цветов для квадратов
   const colors = [
     'rgba(77, 77, 77, 0.18)',
@@ -94,4 +95,5 @@ document.addEventListener('DOMContentLoaded', () => {
       // Пропускаем, если невозможно без пересечений
     }
   }
+  }, 1800);
 });
