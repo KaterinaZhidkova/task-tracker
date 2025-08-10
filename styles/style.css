@@ -109,6 +109,12 @@ body {
                0 2px 4px rgba(0, 0, 0, 0.2);
   letter-spacing: -0.5px;
   transition: all 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.title-screen h1:hover {
+  transform: scale(1.05) translateY(-5px);
 }
 
 .description {
@@ -119,10 +125,12 @@ body {
   color: #34495e;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
+  animation: fadeInUp ease 1s forwards;
+  opacity: 0;
 }
 
 .description:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) translateY(-5px);
 }
 
 .start-button {
@@ -137,6 +145,8 @@ body {
   box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   font-weight: 600;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
 }
 
 .start-button:hover {
@@ -144,3 +154,16 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 7px 20px rgba(52, 152, 219, 0.6);
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.title-screen h1 { animation-delay: 0.9s; }
+.description { animation-delay: 1.5s; }
+.start-button { animation-delay: 2.1s; }
