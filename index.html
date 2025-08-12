@@ -14,13 +14,36 @@
       <div class="shapes-container">
         <div class="shapes"></div>
       </div>
-      <div class="title-screen">
+      <!-- Главный экран -->
+      <div class="title-screen" id="main-screen">
         <h1>Трекер задач</h1>
-        <p class="description">Инструмент для удобного управления своими задачами</p>
+        <p class="description">Инструмент для управления своими задачами</p>
         <button class="start-button">Начать!</button>
+      </div>
+      <!-- Экран трекера -->
+      <div class="tracker-screen" id="tracker-screen" style="display: none;">
+        <div class="tracker-header">
+          <h1>Мои задачи</h1>
+        </div>
+        <div class="tracker-container">
+          <div class="add-task-form">
+            <input type="text" id="task-input" placeholder="Новая задача...">
+            <button id="add-task-btn">+</button>
+          </div>
+          <div class="task-filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="active">Активные</button>
+            <button class="filter-btn" data-filter="completed">Завершённые</button>
+          </div>
+          <ul class="task-list" id="task-list"></ul>
+          <div class="task-stats">
+            <span id="tasks-count">0 активных задач</span>
+            <button id="clear-completed">Очистить завершенные</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <script src="app.js"></script>
+  <script src="src/app.js"></script>
 </body>
 </html>
